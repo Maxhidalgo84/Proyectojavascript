@@ -1,0 +1,55 @@
+
+
+form {
+    margin: auto;
+
+    @media screen and (max-width:1024px){
+        margin: auto;
+    }
+
+    .field {
+        width: 500px;
+        text-align: left;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px; 
+        border: solid 1px #ccc;
+        box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+        background: #fff; 
+    
+        
+       legend {
+            color: rgb(0, 0, 0);
+            font-size: 1.5rem;
+            text-align: center;
+       }
+
+      
+        
+        .respuesta {
+        
+                padding: 0.2rem;
+                width: 80%;
+                border-radius: 5px; 
+                border: solid 1px #ccc;
+                box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+                background-color:  rgba(0, 0, 0, 0.74);
+                color: white;
+                
+
+                @media (max-width:576px){
+                    width:100%;}
+            }
+
+        input::placeholder {
+                color: white;
+            }
+    }
+}
+
+
+.boton {
+    text-align: center;
+    margin: 10px;
+}
+

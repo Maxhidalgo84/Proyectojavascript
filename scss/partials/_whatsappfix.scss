@@ -1,0 +1,13 @@
+.whatsappFixed  {
+    img {
+    position: fixed;
+    width: 50px;
+    right: 10px;
+    z-index: 100;
+
+    @media (max-width:576px){ 
+        width: 30px;
+    }      
+
+    }
+}
