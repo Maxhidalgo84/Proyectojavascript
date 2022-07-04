@@ -6,23 +6,36 @@
     text-align: center;
     max-width:100%;
     position: relative;   
-    background-color: black;
+   
 
-    .portadaLogo {
-        max-width: 200px;
+    .portadaTitulo {
+
+        position: absolute;
         left: 0;
         right: 0;
+        img    {
+            
+            max-width: 150px;
+            left: 0;
+            right: 0;
+            
+        
+        } 
 
-    
+        h1 {
+            margin-top: 10%;
+            color: white;
+            -webkit-text-stroke: 1px black;
+            
+            }
     }
 
     img {
-        max-width: 800px;
-        background-color: black;
-        
+    max-width: 800px;
     }
+ 
     
-    .titulo {
+  /*   .titulo {
         position: absolute;
         left: 0;
         right: 0;
@@ -31,9 +44,14 @@
         
         
         
-    }
+    } */
 }
 
 .texto1 {
     color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: auto;
+    max-width: 800px;
+    margin-top: 20px;
 }

@@ -1,14 +1,18 @@
 
 
 form {
+
+    text-align: center;
+    width: 400px;
     margin: auto;
+   
 
     @media screen and (max-width:1024px){
         margin: auto;
     }
 
     .field {
-        width: 500px;
+        
         text-align: left;
         padding: 10px;
         background-color: #fff;
