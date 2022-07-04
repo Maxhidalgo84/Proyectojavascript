@@ -1,0 +1,7 @@
+$mapRedes:(facebook:#3b5998,instagram: #833AB4,twitter:#55acee,whatsapp:#4dc247);
+
+@each $red, $color in $mapRedes {
+    .#{$red} {
+        background-color:$color
+    }
+}

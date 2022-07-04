@@ -7,12 +7,17 @@
     max-width:100%;
     position: relative;
 
+    img {
+        max-width: 800px;
+    }
     
     .titulo {
         position: absolute;
         left: 0;
         right: 0;
-        color: white;
+        color: black;
+        -webkit-text-stroke: 1px white;
+        top: 10px;
         
         
     }

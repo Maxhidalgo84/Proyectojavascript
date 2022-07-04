@@ -22,11 +22,15 @@ body {
   text-align: center;
   max-width: 100%;
   position: relative; }
+  .portada img {
+    max-width: 800px; }
   .portada .titulo {
     position: absolute;
     left: 0;
     right: 0;
-    color: white; }
+    color: black;
+    -webkit-text-stroke: 1px white;
+    top: 10px; }
 
 .texto1 {
   color: white; }
@@ -81,3 +85,63 @@ form {
 .boton {
   text-align: center;
   margin: 10px; }
+
+/*FOOTER*/
+footer {
+  background-color: white;
+  padding: 10px;
+  margin-top: 3rem;
+  text-align: center;
+  width: 100%; }
+  footer .redes a {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    margin: 0 5px; }
+    footer .redes a:hover {
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.8); }
+    @media (max-width: 576px) {
+      footer .redes a {
+        font-size: 1rem;
+        padding: 5px 10px; } }
+  footer .footerLinks ul {
+    padding: 0;
+    margin-bottom: -0.2rem; }
+    footer .footerLinks ul li {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.5rem; }
+      @media (max-width: 768px) {
+        footer .footerLinks ul li {
+          margin: 0.05rem;
+          padding: 0.05rem; } }
+      footer .footerLinks ul li a {
+        text-decoration: none;
+        display: inline-block;
+        color: black; }
+        @media (max-width: 576px) {
+          footer .footerLinks ul li a {
+            font-size: 1rem; } }
+  footer .footerLinks .spanDatos {
+    font-size: 1rem; }
+    @media (max-width: 576px) {
+      footer .footerLinks .spanDatos {
+        font-size: 0.8rem; } }
+  footer .footerLinks p {
+    margin-top: 10px; }
+
+.facebook {
+  background-color: #3b5998; }
+
+.instagram {
+  background-color: #833AB4; }
+
+.twitter {
+  background-color: #55acee; }
+
+.whatsapp {
+  background-color: #4dc247; }
