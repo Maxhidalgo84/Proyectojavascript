@@ -47,11 +47,11 @@ productos.push(new Producto(2,"MB 2", 80000 ));
 productos.push(new Producto(3,"MB 3", 50000 ));
 productos.push(new Producto(4,"MB 4", 40000 ));
        
-    let valor = 2
+    let valor = parseInt(prompt("ingrese cual bici desea comprar (1, 2, 3 o 4)"))
     
-  /*   while (valor!=1 && valor!=2 && valor!=3 && valor!=4){
+ while (valor!=1 && valor!=2 && valor!=3 && valor!=4){
         alert("ingreso invalido");
-        valor = parseInt(prompt("ingrese cual bici desea comprar (1, 2, 3 o 4)"));} */
+        valor = parseInt(prompt("ingrese cual bici desea comprar (1, 2, 3 o 4)"));} 
     
         
 
@@ -70,5 +70,5 @@ for (const producto of productos) {
     let descuento = precioProducto*0.10;
     let nuevoPrecio = resta(suma(precioProducto,iva(precioProducto)),descuento); 
      
-    console.log(`Usted eligio el modelo de bicicleta Mountain Bike ${valor} y el valor con descuento es de $${nuevoPrecio}`);
+    alert(`Usted eligio el modelo de bicicleta Mountain Bike ${valor} y el valor con descuento es de $${nuevoPrecio}`);
     
