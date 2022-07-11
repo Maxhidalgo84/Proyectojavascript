@@ -54,11 +54,11 @@ productos.push(new Producto(4,"MB 4", 40000 ));
 let fin;   
 let carrito = []
 do {
-let valor = parseInt(prompt("ingrese cual bici desea comprar (1, 2, 3 o 4)"))
+let valor = parseInt(prompt("Ingrese cual Bici 🚲 desea comprar 🛒 (1, 2, 3 o 4)"))
     
 while (valor!=1 && valor!=2 && valor!=3 && valor!=4){
            alert("ingreso invalido");
-           valor = parseInt(prompt("ingrese cual bici desea comprar (1, 2, 3 o 4)"));} 
+           valor = parseInt(prompt("ingrese cual Bici 🚲 desea comprar 🛒 (1, 2, 3 o 4)"));} 
        
 
 
@@ -70,17 +70,18 @@ for (const producto of productos) {
     }
 } 
 alert(`Usted eligio el modelo de bicicleta Mountain Bike ${valor} y el valor es de $${verPrecio}`);
-fin =prompt("desea agregar otra bici?").toLowerCase();
+
 }
-while(fin!="n")
+while(confirm("Desea agregar otra Bici 🚲?"))
       
 
-let detalle = carrito.reduce((acumulaNombre,elemento) => acumulaNombre + " " + elemento.nombre + ": $" + elemento.precio,"")
+let detalle = carrito.reduce((acumulaNombre,elemento) => acumulaNombre + "\n " + elemento.nombre + ": $" + elemento.precio,"")
 let total = carrito.reduce((acumulador,elemento) => acumulador + elemento.precio,0)
 
-const Compras = detalle.concat(" "+ "TOTAL: $"+total)
+const Compras = detalle.concat("\n TOTAL: $"+total)
 
-alert(Compras); 
+alert(Compras)
+console.log(Compras); 
 
     
     
