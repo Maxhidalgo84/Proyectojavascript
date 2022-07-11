@@ -30,12 +30,15 @@ class Producto {
     constructor(id,nombre,precio){
     this.id = id;
     this.nombre = nombre;
-    this.precio = precio;
-    this.vendido = false;
+    this.precio = precio;;
 }
 
-vender() {
-    this.vendido = true
+}
+
+class Carrito {
+    constructor(nombre, precio){
+    this.nombre = nombre;
+    this.precio = precio
 }
 }
 
@@ -47,28 +50,37 @@ productos.push(new Producto(2,"MB 2", 80000 ));
 productos.push(new Producto(3,"MB 3", 50000 ));
 productos.push(new Producto(4,"MB 4", 40000 ));
        
-    let valor = parseInt(prompt("ingrese cual bici desea comprar (1, 2, 3 o 4)"))
+
+let fin;   
+let carrito = []
+do {
+let valor = parseInt(prompt("ingrese cual bici desea comprar (1, 2, 3 o 4)"))
     
- while (valor!=1 && valor!=2 && valor!=3 && valor!=4){
-        alert("ingreso invalido");
-        valor = parseInt(prompt("ingrese cual bici desea comprar (1, 2, 3 o 4)"));} 
-    
-        
+while (valor!=1 && valor!=2 && valor!=3 && valor!=4){
+           alert("ingreso invalido");
+           valor = parseInt(prompt("ingrese cual bici desea comprar (1, 2, 3 o 4)"));} 
+       
+
+
 
 for (const producto of productos) {
-       if (producto.id == (valor)){   
-    precioBici = (producto.precio)
-    producto.vender()} 
+    if (producto.id == (valor)){   
+        carrito.push(new Carrito(producto.nombre,producto.precio))
+        verPrecio = producto.precio
+    }
 } 
-
+alert(`Usted eligio el modelo de bicicleta Mountain Bike ${valor} y el valor es de $${verPrecio}`);
+fin =prompt("desea agregar otra bici?").toLowerCase();
+}
+while(fin!="n")
       
-    const suma = (a,b) => a +b;
-    const resta = (a,b) => a - b;
-    const iva = x => x *0.21;
+
+let detalle = carrito.reduce((acumulaNombre,elemento) => acumulaNombre + " " + elemento.nombre + ": $" + elemento.precio,"")
+let total = carrito.reduce((acumulador,elemento) => acumulador + elemento.precio,0)
+
+const Compras = detalle.concat(" "+ "TOTAL: $"+total)
+
+alert(Compras); 
+
     
-    let precioProducto = precioBici;
-    let descuento = precioProducto*0.10;
-    let nuevoPrecio = resta(suma(precioProducto,iva(precioProducto)),descuento); 
-     
-    alert(`Usted eligio el modelo de bicicleta Mountain Bike ${valor} y el valor con descuento es de $${nuevoPrecio}`);
     
