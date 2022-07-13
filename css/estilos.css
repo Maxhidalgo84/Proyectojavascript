@@ -6,6 +6,11 @@
 body {
   background: black; }
 
+h1 {
+  text-align: center;
+  color: white;
+  -webkit-text-stroke: 1px black; }
+
 .whatsappFixed img {
   position: fixed;
   width: 50px;

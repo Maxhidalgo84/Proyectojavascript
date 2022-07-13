@@ -1,7 +1,7 @@
 // Pedido de usuario y luego sigue eleccion de bicicleta (sin vincularlo con el DOM)
 
 //LOGIN
-/* 
+
  let usuario = prompt("ingrese su usuario")
     
     
@@ -12,7 +12,7 @@
         let mensaje2 = (`Hola ${usuario} `)
         alert(mensaje2)
 
-        let contraseña = prompt("ingrese contraseña")
+        let contraseña = prompt("ingrese coder para verificar").toLowerCase();
 
             while (contraseña != "coder") {
             alert ("Contraseña incorrecta");
@@ -21,7 +21,7 @@
 
             }
         alert(`${usuario} se logueo exitosamente`); 
-     */
+    
 
 //Eleccion de la bici
 
@@ -69,7 +69,7 @@ for (const producto of productos) {
         verPrecio = producto.precio
     }
 } 
-alert(`Usted eligio el modelo de bicicleta Mountain Bike ${valor} y el valor es de $${verPrecio}`);
+alert(`${usuario} eligio el modelo de bicicleta Mountain Bike ${valor} y el valor es de $${verPrecio}`);
 
 }
 while(confirm("Desea agregar otra Bici 🚲?"))
@@ -78,7 +78,7 @@ while(confirm("Desea agregar otra Bici 🚲?"))
 let detalle = carrito.reduce((acumulaNombre,elemento) => acumulaNombre + "\n " + elemento.nombre + ": $" + elemento.precio,"")
 let total = carrito.reduce((acumulador,elemento) => acumulador + elemento.precio,0)
 
-const Compras = detalle.concat("\n TOTAL: $"+total)
+const Compras = (" Listado de Productos:")+detalle.concat("\n TOTAL: $"+total)
 
 alert(Compras)
 console.log(Compras); 
