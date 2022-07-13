@@ -1,9 +1,21 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400;1,600&family=Domine&family=Montserrat&family=Roboto:wght@300&family=Rye&display=swap');
 
-  body {
-    background: black;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  font-family: Montserrat;
+  
+}
+
+h1,h2 {
+text-align: center;
+color: white;
+-webkit-text-stroke: 1px black;
+
 }

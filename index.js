@@ -45,10 +45,10 @@ class Carrito {
 
 let productos = [];
 
-productos.push(new Producto(1,"../img/mountain1.jpg","MB 1","la mejor bici", 100000 ));
-productos.push(new Producto(2,"../img/mountain2.jpg","MB 2","la mejor bici", 80000 ));
-productos.push(new Producto(3,"../img/mountain3.jpg","MB 3","la mejor bici", 50000 ));
-productos.push(new Producto(4,"../img/mountain4.jpg","MB 4","la mejor bici", 40000 ));
+productos.push(new Producto(1,"../img/mountain1.jpg","Mountain Rodado 29 GT","la mejor bici", 100000 ));
+productos.push(new Producto(2,"../img/mountain2.jpg","Mountain Rodado 29","Versatil, donde quiera que vayas", 80000 ));
+productos.push(new Producto(3,"../img/mountain3.jpg","Mountain 27.5","Con doble suspension y horquilla max", 50000 ));
+productos.push(new Producto(4,"../img/mountain4.jpg","Mountain eco","La mejor relacion precio", 40000 ));
        
 
      
@@ -66,7 +66,7 @@ contenedor.innerHTML = ` <div class="card">
                             <h5 class="card-title">${producto.nombre} </h5>
                             <p class="card-text"> ${producto.descripcion} </p>
                             <h5 class="card-title"> $${producto.precio}</h5>
-                            <a href="#" id="${producto.id}" onclick="agregarItem()"  class="btn btn-primary">Comprar</a>
+                            <a href="#" id="${producto.id}" onclick="seleccion(this.id)"  class="btn btn-primary">Comprar</a>
                             </div>
                         </div>`
 padre2.appendChild(contenedor)
@@ -81,20 +81,21 @@ valor = obj
 
 for (const producto of productos) {
     if (producto.id == (valor)){   
-        carrito.push(new Carrito(producto.id,producto.nombre,producto.precio))
+        carrito.push(new Carrito(producto.nombre,producto.precio))
        verPrecio = producto.precio
     }
 } 
 
-for (const items of carrito) {
+/* for (const items of carrito) {
     if (carrito.id == (valor)) {
         carrito.splice
     
     }
 
-}
+} */
 
 alert(`Usted eligio el modelo de bicicleta Mountain Bike ${valor} y el valor es de $${verPrecio}`);
+
 
 let detalle = carrito.reduce((acumulaNombre,elemento) => acumulaNombre + "\n " + elemento.nombre + ": $" + elemento.precio,"")
 let total = carrito.reduce((acumulador,elemento) => acumulador + elemento.precio,0)
@@ -103,7 +104,9 @@ const Compras = detalle.concat("\n TOTAL: $"+total)
 
 alert(Compras)
 console.log(Compras); 
-}
+
+
+
 let padre3 = document.getElementById("total")
 
 let totales = document.createElement("div")
@@ -113,5 +116,5 @@ totales.innerHTML = `<h3>Detalle productos<h3>
                      <p>${detalle}</p>
                      <b>Total: $${total}`
 padre3.appendChild(totales)
-
+}
     
