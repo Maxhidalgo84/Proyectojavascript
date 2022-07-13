@@ -75,9 +75,13 @@ padre2.appendChild(contenedor)
 let valor;
 
 let carrito=[];
+
 const seleccion = (obj) => {
 valor = obj
-
+let borrar = document.getElementById('total')
+while( borrar.hasChildNodes()) {
+    borrar.removeChild(borrar.firstChild)
+} 
 
 for (const producto of productos) {
     if (producto.id == (valor)){   
@@ -105,16 +109,28 @@ const Compras = detalle.concat("\n TOTAL: $"+total)
 alert(Compras)
 console.log(Compras); 
 
-
-
 let padre3 = document.getElementById("total")
 
 let totales = document.createElement("div")
-totales.classList.add("totales")
 
-totales.innerHTML = `<h3>Detalle productos<h3>
-                     <p>${detalle}</p>
-                     <b>Total: $${total}`
+totales.innerHTML = `${Compras}`;
+totales.id = "clear";
 padre3.appendChild(totales)
+
+
 }
-    
+
+
+
+/* for (const item of carrito) {
+    let li = document.createElement("li")
+    li.innerHTML = `<p>Producto: ${item.nombre}  <b>$${item.precio}</b></p>`;
+    padre3.append(li);
+}
+
+let totales = document.createElement("div")
+totales.innerHTML=`<b>Total: $${total}</b>`
+padre3.appendChild(totales); 
+
+}
+  */
