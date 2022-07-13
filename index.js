@@ -44,13 +44,11 @@ class Carrito {
 
 let productos = [];
 
-productos.push(new Producto(1,"../img/mountain1.jpg","MB 1","la mejor bici", 100000 ));
-productos.push(new Producto(2,"../img/mountain2.jpg","MB 2","la mejor bici", 80000 ));
-productos.push(new Producto(3,"../img/mountain3.jpg","MB 3","la mejor bici", 50000 ));
-productos.push(new Producto(4,"../img/mountain4.jpg","MB 4","la mejor bici", 40000 ));
-       
- 
-     
+productos.push(new Producto(1,"../img/mountain1.jpg","Mountain Rodado 29 GT","la mejor bici", 100000 ));
+productos.push(new Producto(2,"../img/mountain2.jpg","Mountain Rodado 29","Versatil, donde quiera que vayas", 80000 ));
+productos.push(new Producto(3,"../img/mountain3.jpg","Mountain 27.5","Con doble suspension y horquilla max", 50000 ));
+productos.push(new Producto(4,"../img/mountain4.jpg","Mountain eco","La mejor relacion precio", 40000 ));
+              
 let padre2 = document.getElementById("cards");
 
 
@@ -86,10 +84,11 @@ while (valor!=1 && valor!=2 && valor!=3 && valor!=4){
 for (const producto of productos) {
     if (producto.id == (valor)){   
         carrito.push(new Carrito(producto.nombre,producto.precio))
+        nombreBici = producto.nombre
         verPrecio = producto.precio
     }
 } 
-alert(`${usuario} eligio el modelo de bicicleta Mountain Bike ${valor} y el valor es de $${verPrecio}`);
+alert(`${usuario} eligio el modelo de bicicleta ${nombreBici} y el valor es de $${verPrecio}`);
 
 }
 while(confirm("Desea agregar otra Bici 🚲?"))
@@ -101,15 +100,18 @@ let total = carrito.reduce((acumulador,elemento) => acumulador + elemento.precio
 const Compras = (" Listado de Productos:")+detalle.concat("\n TOTAL: $"+total)
 
 alert(Compras)
+console.log(detalle);
 
 let padre3 = document.getElementById("total")
 
-let totales = document.createElement("div")
-totales.classList.add("totales")
+for (const item of carrito) {
+    let li = document.createElement("li")
+    li.innerHTML = `<p>Producto: ${item.nombre}  <b>$${item.precio}</b></p>`;
+    padre3.append(li);
+}
 
-totales.innerHTML = `<h3>Detalle productos<h3>
-                     <p>${detalle}</p>
-                     <b>Total: $${total}`
-padre3.appendChild(totales)
+let totales = document.createElement("div")
+totales.innerHTML=`<b>Total: $${total}</b>`
+padre3.appendChild(totales); 
 
     
