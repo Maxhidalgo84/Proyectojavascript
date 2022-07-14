@@ -46,43 +46,20 @@
       <article>
         <p class="texto1">Tenemos todas las bicis ideales para tu inicio en ciclismo de carrera asi como tambien para profesionales</p>
     </article>
-        <section class="bicis">
-          <div class="row  text-center justify-content-md-center row-cols-1 row-cols-md-2 g-4">
-              <div class="col-lg-4">
-                <div class="card">
-                  <img src="../img/bicicarrera1.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Carrera 1</h5>
-                    <p class="card-text">La mejor bici de carrera del mercado</p>
-                    <a href="#" id="2" onclick="seleccion(this.id)"  class="btn btn-primary">Comprar</a>  
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="card">
-                  <img src="../img/bicicarrera2.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Carrera 2</h5>
-                    <p class="card-text">Ideal para trayectos largos</p>
-                    <a href="#" id="3" onclick="seleccion(this.id)" class="btn btn-primary">Comprar</a>  
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="card">
-                  <img src="../img/bicicarrera13.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Carrera 3</h5>
-                    <p class="card-text">Mejor en su precio</p>
-                    <a href="#" id="4" onclick="seleccion(this.id)"  class="btn btn-primary">Comprar</a>  
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <p id="demo2" class="demo2"></p>
-        
+    <form class="ingreso">
+      <label  for="elige">ingrese cual Bici 🚲 desea comprar 🛒 (1, 2, 3 o 4)</label>
+      <input type="text" id="elige">
+      </form>
+    <section class="bicis">
+      <div id="carrera" class="row  text-center justify-content-md-center row-cols-1 row-cols-md-2 g-4">
+          
+      </div>
+  </section>        
+   <div  class="total">
+    <h2>Detalle de Carrito</h2>
+      <ol id="total"></ol>
       
+   </div>
     </main>
     <footer>
       <section class="redes">

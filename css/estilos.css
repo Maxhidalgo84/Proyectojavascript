@@ -11,6 +11,11 @@ h1, h2 {
   color: white;
   -webkit-text-stroke: 1px black; }
 
+.ingreso {
+  margin: 10px auto;
+  text-align: center;
+  color: white; }
+
 .whatsappFixed img {
   position: fixed;
   width: 50px;
