@@ -102,6 +102,11 @@ h1, h2 {
     text-align: left;
     font-size: 1rem; }
 
+.ingreso {
+  margin: 10px auto;
+  color: white;
+  text-align: center; }
+
 form {
   text-align: center;
   width: 400px;
