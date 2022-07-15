@@ -99,6 +99,7 @@ padre2.appendChild(contenedor)
 
 const bicicleta =  document.getElementById(`${producto.id}`)
 bicicleta.onclick = () => {eleccion(producto.id)}
+//bicicleta.addEventListener("click", ()=> {eleccion(producto.id)})
 }
 }
 
@@ -107,9 +108,7 @@ let valor;
 
 let carrito=[];
 
-
-//const seleccion = (obj) => {
-    function eleccion(x) {
+    const eleccion =(x) => {
         valor = x
         let verPrecio
         let borrar = document.getElementById('total')
@@ -124,13 +123,6 @@ let carrito=[];
             }
         }
 
-        /* for (const items of carrito) {
-            if (carrito.id == (valor)) {
-                carrito.splice
-            
-            }
-        
-        } */
         alert(`Usted eligio el modelo de bicicleta Mountain Bike ${valor} y el valor es de $${verPrecio}`)
 
 
