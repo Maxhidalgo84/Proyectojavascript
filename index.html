@@ -58,28 +58,27 @@
             con excelentes marcas y variedad.
           </p>
         </article>
-        <form class="col-lg-4 text-center col-12 mb-5">
+        <form id="formulario" class="col-lg-4 text-center col-12 mb-5">
           <div class="field">
             <legend>Ingreso</legend>
             <div class="form-group-row">
-            <label class="contacto col-sm-2 col-form-label" for="uid">Nombre:</label>
-
-            <input class="respuesta" id="uid" placeholder="Su Respuesta" type="text" />
-            </div>
+              <label class="contacto col-sm-2 col-form-label" for="correo">Correo: </label>
+  
+              <input class="respuesta" id="correo" placeholder="Su Respuesta" type="text" />
+              </div>
             <div class="form-group-row">
-            <label class="contacto col-sm-2 col-form-label" for="pass">Codigo:</label>
+            <label class="contacto col-sm-2 col-form-label" for="name">Nombre: </label>
 
-            <input class="respuesta" id="pass" type="text" placeholder="Su Respuesta" />
+            <input class="respuesta" id="name" placeholder="Su Respuesta" type="text" />
             </div>
+            <p id="error1"></p>
             <div class="boton">
-              <button type="submit" onclick="getValueInput()" class="btn btn-dark">Enviar</button> 
+             <button type="submit" id="envia" class="btn btn-dark">Enviar</button> 
             <button type="reset" class="btn btn-dark">Borrar</button> 
             </div>
           </div>
         </form>
-        <div class="boton">
-          <button  onclick="getValueInput()" class="btn btn-dark">Enviar</button>            
-        </div>
+        <div id="demo3" class="demo2"></div>
     </main>
     <footer>
       <section class="redes">
@@ -103,8 +102,9 @@
     </div>  
     </footer>
     <script src="https://kit.fontawesome.com/5a33612f04.js" crossorigin="anonymous"></script>
-    <script src="/index.js"></script>
+   
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+<script src="/index.js"></script>
 </body>
 </html>
