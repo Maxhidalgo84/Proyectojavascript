@@ -21,18 +21,10 @@
                 <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="../pages/mountain.html">Mountain</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="../pages/carrera.html">Carrera</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="../pages/niños.html">Infantiles</a>
+                <a class="nav-link active" href="../pages/bicicletas.html">Bicicletas</a>
               </li>
             </ul>
-            <form role="search">
-              <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            </form>
+            <button class="nav-link text-body " id="open" href="#">Carrito <i class="fa-solid fa-cart-shopping"></i> <span id="contador">0</span> </a>
           </div>
         </div>
       </nav>
@@ -42,25 +34,51 @@
       </div>
     </header>
     <main>
-      <h1>Mountain Bike</h1>
-        <article>
-            <p class="texto1">Disponemos de una gran variedad de Mountain bike, para que puedas ir a donde tu quieras y disfrutar de la mejor bici 
-              y experimentar la adrelina de subirte a una de estas.
-            </p>
-        </article>
-        <section class="bicis">
-          <div id="cards" class="row  text-center justify-content-md-center row-cols-1 row-cols-md-2 g-4">
+        <section class="mountain">
+          <h2>Mountain Bike</h2>
+          <article>
+              <p class="texto1">Disponemos de una gran variedad de Mountain bike, para que puedas ir a donde tu quieras y disfrutar de la mejor bici 
+                y experimentar la adrelina de subirte a una de estas.
+              </p>
+          </article>
+          <div id="MB" class="row  text-center justify-content-md-center row-cols-1 row-cols-md-2 g-4">
               
           </div>
-      </section>        
+        </section>
+        <section class="carrera">
+          <h2>Carrera</h2>
+          <article>
+            <p class="texto1">Tenemos todas las bicis ideales para tu inicio en ciclismo de carrera asi como tambien para profesionales</p>
+          </article>
+
+          <div id="carrera" class="row  text-center justify-content-md-center row-cols-1 row-cols-md-2 g-4">
+              
+          </div>
+        </section>
+        <section class="infantil">
+          <h2>INFANTILES</h2>
+          <article>
+            <p class="texto1">Tenes que regalarle una bici a los mas peques, aca tenemos la mejor solucion.</p>
+        </article>
+          
+          <div id="infantil" class="row  text-center justify-content-md-center row-cols-1 row-cols-md-2 g-4">
+              
+          </div>
+        </section>
+        <div class="modal" id="modal">
+          <div class="modalCarrito">
+                  <h3>Carrito</h3>
+              <div id="carritoContenedor"></div>
+              <div class="suma" id="suma"></div>
+              <button class="finalizar" id="finalizar">Finalizar Compra</button>
+              <button class="cerrar" id="cerrar">Cerrar</button>
+          </div>
+      </div>          
       <div class="total">
         <h2>Detalle de Carrito</h2>
         <div id="total">
-
         </div>
-        
-          
-       </div>
+        </div>
     </main>
     <footer>
       <section class="redes">
@@ -84,9 +102,12 @@
     </div>  
     </footer>
     <script src="https://kit.fontawesome.com/5a33612f04.js" crossorigin="anonymous"></script>
-      
-          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
-<script src="../index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="../app.js" type="module"></script>
+    <script src="../productos.js" type="module"></script>
+    <script src="../modal.js" type="module"></script>
+    <script src="../carritoIndex.js" type="module"></script>
+    <script src="../index.js" type="module"></script>
 </body>
 </html>

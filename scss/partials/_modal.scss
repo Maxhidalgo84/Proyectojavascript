@@ -1,0 +1,69 @@
+
+
+/* Modal */
+.modal {
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; 
+    background-color: transparent;
+    width: 100%;
+    height: 100vh;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    border-radius: 10px ;
+    z-index: 100;
+  } 
+  
+  /* hacer visible el modal  */
+  .modalActive {
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+  }
+  
+  .modalCarrito{
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 30rem;
+    max-height: 30rem;
+    background-color:white
+  }
+  
+  .cerrar {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .finalizar {
+    background-color: rgb(21, 117, 9);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .productoEnCarrito {
+    border-left: 5px solid lightblue;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .botonEliminar {
+    background-color: white;
+    color: lightblue;
+    border: none;
+    font-size: 20px;
+  }
+
+  .suma {
+    text-align: center;
+  }
