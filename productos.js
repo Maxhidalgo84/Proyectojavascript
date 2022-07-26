@@ -21,6 +21,6 @@ productos.push(new Producto(7, "../img/bicicarrera2.jpg", "Carrera 2", "Ideal tr
 productos.push(new Producto(8, "../img/bicicarrera13.jpg", "Carrera 3", "Mejor en su precio", 70000, "carrera"));
 productos.push(new Producto(9, "../img/biciniño1.jpg", "infantil 1", "Bici niño 1", 30000, "infantil"));
 productos.push(new Producto(10, "../img/biciniño2.jpg", "infantil 2", "Bici niño 2", 20000, "infantil"));
-productos.push(new Producto(11, "../img/biciniño2.jpg", "infantil 3", "Bici niño 3", 15000, "infantil"));
+productos.push(new Producto(11, "../img/biciniño3.jpg", "infantil 3", "Bici niño 3", 15000, "infantil"));
 
 export {productos};

@@ -1,3 +1,31 @@
 .logo {
 width: 50px;
 }
+
+.carrito2 {
+    border-radius: 5px;
+    padding: 2px;
+    
+
+    &:hover {
+        background-color: rgb(18, 161, 54);
+        box-shadow: 1px 2px 2px rgba(255, 255, 255, 0.31); 
+    }
+    @media (max-width:576px){
+        display: none;       
+    }
+}
+
+.carrito {
+    border-radius: 5px;
+    padding: 2px;
+
+    &:hover {
+        background-color: rgb(18, 161, 54);
+        box-shadow: 1px 2px 2px rgba(252, 252, 252, 0.31); 
+    }
+
+    @media (min-width:576px){
+        display: none;       
+    }
+}

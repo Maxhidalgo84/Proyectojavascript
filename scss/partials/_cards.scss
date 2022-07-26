@@ -1,5 +1,40 @@
 .bicis {
-    margin: 10px; 
+    margin: 5px; 
+    
+    hr {
+    
+    color: white;
+    }
+    h2{
+      margin: 1px;
+      border: 1px solid white ;
+      border-radius: 10px;
+      margin: auto;
+      width: 300px;  
+      background-color: rgb(255, 255, 255);
+      position: relative;
+      
+      &::after, &::before {
+        content: '';
+        position: absolute;
+        width: 70px;
+        height: 2px;
+        background-color: white;
+        top: 45%;
+      }
+      &::after {
+        left: -70px;
+      }
+      &::before {
+        right: -70px;
+      }
+   
+    }
+
+    article {
+     margin-bottom: 5px;
+    }
+    
 
 }
 

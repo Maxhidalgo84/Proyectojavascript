@@ -11,20 +11,21 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">BikeMax</a>
+          <a class="navbar-brand" href="../index.html">BikeMax</a>
+          <button class="nav-link text-body  carrito" id="open" href="#">Carrito <i class="fa-solid fa-cart-shopping"></i> <span id="contador2">0</span> </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarsExample03">
             <ul class="navbar-nav me-auto mb-2 mb-sm-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="../pages/bicicletas.html">Bicicletas</a>
               </li>
             </ul>
-            <button class="nav-link text-body " id="open" href="#">Carrito <i class="fa-solid fa-cart-shopping"></i> <span id="contador">0</span> </a>
+            <button class="nav-link text-body  carrito2" id="open2" href="#">Carrito<i class="fa-solid fa-cart-shopping"></i> <span id="contador">0</span> </a>
           </div>
         </div>
       </nav>
@@ -34,7 +35,7 @@
       </div>
     </header>
     <main>
-        <section class="mountain">
+        <section class="bicis">
           <h2>Mountain Bike</h2>
           <article>
               <p class="texto1">Disponemos de una gran variedad de Mountain bike, para que puedas ir a donde tu quieras y disfrutar de la mejor bici 
@@ -44,8 +45,9 @@
           <div id="MB" class="row  text-center justify-content-md-center row-cols-1 row-cols-md-2 g-4">
               
           </div>
+          <hr/>
         </section>
-        <section class="carrera">
+        <section class="bicis">
           <h2>Carrera</h2>
           <article>
             <p class="texto1">Tenemos todas las bicis ideales para tu inicio en ciclismo de carrera asi como tambien para profesionales</p>
@@ -54,8 +56,9 @@
           <div id="carrera" class="row  text-center justify-content-md-center row-cols-1 row-cols-md-2 g-4">
               
           </div>
+          <hr/>
         </section>
-        <section class="infantil">
+        <section class="bicis">
           <h2>INFANTILES</h2>
           <article>
             <p class="texto1">Tenes que regalarle una bici a los mas peques, aca tenemos la mejor solucion.</p>
@@ -74,11 +77,6 @@
               <button class="cerrar" id="cerrar">Cerrar</button>
           </div>
       </div>          
-      <div class="total">
-        <h2>Detalle de Carrito</h2>
-        <div id="total">
-        </div>
-        </div>
     </main>
     <footer>
       <section class="redes">
@@ -92,9 +90,9 @@
       <section class="footerLinks">
         <ul>
           <li><a href="../index.html">Inicio</a></li>
-          <li><a href="mountain.html">Mountain</a></li>
-          <li><a href="carrera.html">Carrera</a></li>
-          <li><a href="niños.html">Infantiles</a></li>
+          <li><a href="mountain.html#mountain">Mountain</a></li>
+          <li><a href="carrera.html#carrera">Carrera</a></li>
+          <li><a href="niños.html#infantil">Infantiles</a></li>
           <li><a href="carrito.html">carrito</a></li>
         </ul>
         <p>Sitio Web Creado por <strong>Máximo Hidalgo</strong></p>
