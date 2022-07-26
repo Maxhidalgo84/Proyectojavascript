@@ -6,28 +6,29 @@
     color: white;
     }
     h2{
+      max-width: 250px;
+      color: black;
       margin: 1px;
       border: 1px solid white ;
       border-radius: 10px;
       margin: auto;
-      width: 300px;  
       background-color: rgb(255, 255, 255);
       position: relative;
       
       &::after, &::before {
         content: '';
         position: absolute;
-        width: 70px;
+        width: 30px;
         height: 2px;
         background-color: white;
         top: 45%;
       }
       &::after {
-        left: -70px;
+        left: -25px;
       }
       &::before {
-        right: -70px;
-      }
+        right: -25px;
+      } 
    
     }
 
