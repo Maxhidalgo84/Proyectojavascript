@@ -1,46 +1,51 @@
 import { productos } from "./productos.js";
 import { carritoIndex } from "./carritoIndex.js";
 import {borrarItemCarrito  } from "./carritoIndex.js";
-
+//let productosDes = {id, img, nombre, descripcion, precio} = productos;
 //Muestro productos en el dom
-const mostrarProductos = (productos) => {
+const mostrarProductos = () => {
   const mountain = document.getElementById("MB");
   const carrera = document.getElementById("carrera");
   const infantil = document.getElementById("infantil");
 
-  for (const producto of productos) {
+  for (const {id,img,nombre,descripcion,precio,categoria} of productos) {
     let contenedor = document.createElement("div");
     contenedor.classList.add("col-lg-4");
 
     contenedor.innerHTML = ` <div class="card">
-                                <img src=${producto.img} class="card-img-top" alt="...">
+                                <img src=${img} class="card-img-top" alt="...">
                                     <div class"card-body>
-                                    <h5 class="card-title">${producto.nombre} </h5>
-                                    <p class="card-text"> ${producto.descripcion} </p>
-                                    <h5 class="card-title"> $${producto.precio}</h5>
-                                    <a href="#" id="${producto.id}"  class="btn btn-primary">Comprar</a>
+                                    <h5 class="card-title">${nombre} </h5>
+                                    <p class="card-text"> ${descripcion} </p>
+                                    <h5 class="card-title"> $${precio}</h5>
+                                    <a href="#" id="${id}"  class="btn btn-primary">Comprar</a>
                                     </div>
                                 </div>`;
     if (mountain) {
-      if (producto.categoria === "mountain") {
-        mountain.appendChild(contenedor);
-      } else if (producto.categoria === "carrera") {
-        carrera.appendChild(contenedor);
-      } else {
-        infantil.appendChild(contenedor);
-      }
+       (categoria === "mountain") ? mountain.appendChild(contenedor): (categoria === "carrera") ? carrera.appendChild(contenedor)
+       : infantil.appendChild(contenedor);
+    
 
       //eleccion de bici al apretar comprar
-      const bicicleta = document.getElementById(`${producto.id}`);
+      const bicicleta = document.getElementById(`${id}`);
       //bicicleta.onclick = () => {eleccion(producto.id)}
       bicicleta.addEventListener("click", () => {
-        carritoIndex(producto.id);
-        alert(`Se agrego ${producto.nombre}`);
+        carritoIndex(id);
+        Swal.fire({
+          title: 'Listo!',
+          text: `Se agrego ${nombre} al carrito`,
+          imageUrl:`${img}`,
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: 'Custom image',
+        });
+             //alert(`Se agrego ${nombre}`);
       });
-
     }
   }
 };
+
+
 
 mostrarProductos(productos);
 
@@ -49,6 +54,7 @@ mostrarProductos(productos);
 let padre = document.getElementById("demo3");
 let error1 = document.getElementById("error1");
 let usuario;
+let correo;
 let usuarioSto = sessionStorage.getItem("usuario");
 let formulario = document.getElementById("formulario");
 let boton01 = document.getElementById("envia");
@@ -58,6 +64,8 @@ if (formulario) {
   const loguear = () => {
     formulario.addEventListener("submit", (e) => {
       e.preventDefault();
+      padre.innerText = "";
+      error1.innerText = "";
       if (
         e.target.correo.value.includes("@") &&
         e.target.correo.value.includes(".")
@@ -69,7 +77,11 @@ if (formulario) {
         mostrarUser.innerText = `Bienvenido ${usuario.value}`;
         padre.append(mostrarUser);
       } else {
-        alert("correo invalido");
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Parece que no has ingresado un correo valido!',
+        })
         let mostrarUser = document.createElement("div");
         mostrarUser.innerHTML = "no es un correo";
         error1.appendChild(mostrarUser);
@@ -82,7 +94,7 @@ if (formulario) {
   if (usuarioSto) {
     let usuario = usuarioSto;
     let mensaje = `Bienvenido ${usuario}`;
-    alert(mensaje);
+    Swal.fire(mensaje)
     let mostrarUser = document.createElement("div");
     mostrarUser.className = "demo2";
     mostrarUser.innerText = `Bienvenido ${usuario}`;

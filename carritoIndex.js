@@ -1,17 +1,20 @@
 import { productos } from "./productos.js";
 
-let carrito;
-let productoStorage = JSON.parse(localStorage.getItem("productos"));
+//let carrito;
+//let productoStorage = JSON.parse(localStorage.getItem("productos"));
 
 
- if (productoStorage) {
-  carrito = productoStorage;
-} else {
-  carrito = [];
-}; 
+//  if (productoStorage) {
+//   carrito = productoStorage;
+// } else {
+//   carrito = [];
+// }; 
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
 
 const renderCarrito = () => {
-  
+ 
   let productoStorage = JSON.parse(localStorage.getItem("productos"))
   const contenedorCarrito = document.getElementById("carritoContenedor");
   const contador = document.getElementById("contador")
