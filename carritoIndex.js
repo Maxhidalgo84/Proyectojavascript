@@ -10,6 +10,7 @@ import { productos } from "./productos.js";
 //   carrito = [];
 // }; 
 
+const DateTime = luxon.DateTime
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 
@@ -19,6 +20,9 @@ const renderCarrito = () => {
   const contenedorCarrito = document.getElementById("carritoContenedor");
   const contador = document.getElementById("contador")
   const contador2 = document.getElementById("contador2")
+  const now = DateTime.now()
+  const later = now.plus({days: 10})
+  const envio = later.toLocaleString(DateTime.DATE_SHORT)
   contenedorCarrito.innerHTML = "";
   
   
@@ -41,7 +45,8 @@ const renderCarrito = () => {
     let precioTotal = document.getElementById("suma");
     let total = carrito.reduce(
       (acumulador, elemento) =>acumulador + (elemento.precio * elemento.cantidad),0);
-      precioTotal.innerHTML = `Total: $${total}`;
+      precioTotal.innerHTML = `<p>Total: $${total}</p>
+                               <p>La fecha estimada de envio es ${envio}</p>`;
 
     let cantidad = carrito.reduce((acumulador,elemento) => acumulador + elemento.cantidad,0)
     contador.innerText = (cantidad)
