@@ -1,3 +1,6 @@
+import {mostrarProductos} from "./app.js"
+
+
 const productos = [];
 
 class Producto {
@@ -12,6 +15,44 @@ class Producto {
 }
 }
 
+
+/* fetch("../data.json")
+.then(response => response.json())
+.then(datos => {
+    datos.forEach(dato => {
+        productos.push(new Producto(dato.id,dato.img,dato.nombre,dato.descripcion,dato.precio,dato.categoria));
+    }); 
+}) */
+
+
+ const cargarProductos = async() =>{
+    
+    try {
+        const response = await fetch("../data.json")
+        
+        const datos = await response.json();
+
+        console.log(datos);
+
+        datos.forEach(dato => {
+            productos.push(new Producto(dato.id,dato.img,dato.nombre,dato.descripcion,dato.precio,dato.categoria));
+            
+        });
+    }catch{
+        console.log("error");
+    }
+
+};
+
+//cargarProductos();
+   
+const global = async() =>{
+    await cargarProductos()
+    mostrarProductos(productos)
+}
+
+global()
+/*
 productos.push(new Producto(1,"../img/mountain1.jpg","Mountain Rodado 29 GT","la mejor bici", 100000,"mountain" ));
 productos.push(new Producto(2,"../img/mountain2.jpg","Mountain Rodado 29","Versatil, donde quiera que vayas", 80000,"mountain" ));
 productos.push(new Producto(3,"../img/mountain3.jpg","Mountain 27.5","Con doble suspension y horquilla max", 50000,"mountain" ));
@@ -22,5 +63,5 @@ productos.push(new Producto(8, "../img/bicicarrera13.jpg", "Carrera 3", "Mejor e
 productos.push(new Producto(9, "../img/biciniño1.jpg", "infantil 1", "Bici niño 1", 30000, "infantil"));
 productos.push(new Producto(10, "../img/biciniño2.jpg", "infantil 2", "Bici niño 2", 20000, "infantil"));
 productos.push(new Producto(11, "../img/biciniño3.jpg", "infantil 3", "Bici niño 3", 15000, "infantil"));
-
-export {productos};
+ */
+export {productos}; 

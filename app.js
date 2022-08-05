@@ -1,14 +1,17 @@
 import { productos } from "./productos.js";
 import { carritoIndex } from "./carritoIndex.js";
-import {borrarItemCarrito  } from "./carritoIndex.js";
-//let productosDes = {id, img, nombre, descripcion, precio} = productos;
+
 //Muestro productos en el dom
-const mostrarProductos = () => {
+
+const mostrarProductos = (productos) => {
+  
   const mountain = document.getElementById("MB");
   const carrera = document.getElementById("carrera");
   const infantil = document.getElementById("infantil");
 
   for (const {id,img,nombre,descripcion,precio,categoria} of productos) {
+    console.log(nombre);
+  
     let contenedor = document.createElement("div");
     contenedor.classList.add("col-lg-4");
 
@@ -45,9 +48,9 @@ const mostrarProductos = () => {
   }
 };
 
+//mostrarProductos(productos);
 
-
-mostrarProductos(productos);
+export {mostrarProductos}
 
 // Pedido de usuario
 

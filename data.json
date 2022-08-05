@@ -1,0 +1,91 @@
+[
+  {
+    "id": 1,
+    "img": "../img/mountain1.jpg",
+    "nombre": "Mountain Rodado 29 GT",
+    "descripcion": "la mejor bici",
+    "precio": 100000,
+    "categoria": "mountain"
+  },
+
+  {
+    "id": 2,
+    "img": "../img/mountain2.jpg",
+    "nombre": "Mountain Rodado 29",
+    "descripcion": "Versatil, donde quiera que vayas",
+    "precio": 80000,
+    "categoria": "mountain"
+  },
+
+  {
+    "id": 3,
+    "img": "../img/mountain3.jpg",
+    "nombre": "Mountain 27.5",
+    "descripcion": "Con doble suspension y horquilla max",
+    "precio": 50000,
+    "categoria": "mountain"
+  },
+
+  {
+    "id": 4,
+    "img": "../img/mountain4.jpg",
+    "nombre": "Mountain eco",
+    "descripcion": "La mejor relacion precio",
+    "precio": 40000,
+    "categoria": "mountain"
+  },
+
+  {
+    "id": 5,
+    "img": "../img/bicicarrera1.jpg",
+    "nombre": "Carrera 1",
+    "descripcion": "La mejor bici de carrera",
+    "precio": 100000,
+    "categoria": "carrera"
+  },
+
+  {
+    "id": 6,
+    "img": "../img/bicicarrera2.jpg",
+    "nombre": "Carrera 2",
+    "descripcion": "Ideal trayectos largos",
+    "precio": 90000,
+    "categoria": "carrera"
+  },
+
+  {
+    "id": 7,
+    "img": "../img/bicicarrera13.jpg",
+    "nombre": "Carrera 3",
+    "descripcion": "Mejor en su precio",
+    "precio": 70000,
+    "categoria": "carrera"
+  },
+
+  {
+    "id": 8,
+    "img": "../img/biciniño1.jpg",
+    "nombre": "infantil 1",
+    "descripcion": "Bici niño 1",
+    "precio": 30000,
+    "categoria": "infantil"
+  },
+
+  {
+    "id": 9,
+    "img": "../img/biciniño2.jpg",
+    "nombre": "infantil 2",
+    "descripcion": "Bici niño 2",
+    "precio": 20000,
+    "categoria": "infantil"
+  },
+
+  {
+    "id": 10,
+    "img": "../img/biciniño3.jpg",
+    "nombre": "infantil 3",
+    "descripcion": "Bici niño 3",
+    "precio": 15000,
+    "categoria": "infantil"
+  }
+]
