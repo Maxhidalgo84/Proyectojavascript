@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
         <div class="container-fluid">
-          <a class="navbar-brand" href="../index.html">BikeMax</a>
+          <a class="navbar-brand" id="auto" href="#"><img class="logo" src="../img/logbici.png"></a>
           <button class="nav-link text-body  carrito" id="open" href="#">Carrito <i class="fa-solid fa-cart-shopping"></i> <span id="contador2">0</span> </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,6 +25,7 @@
                 <a class="nav-link active" href="../pages/bicicletas.html">Bicicletas</a>
               </li>
             </ul>
+            <p id="demo3" class="demo2"></p>
             <button class="nav-link text-body  carrito2" id="open2" href="#">Carrito<i class="fa-solid fa-cart-shopping"></i> <span id="contador">0</span> </a>
           </div>
         </div>
@@ -68,6 +69,13 @@
               
           </div>
         </section>
+        <div class="modal2" id="modal2">
+          <div class="modalInfo">
+                  <h3>Informacion</h3>
+              <div id="infoContenedor"></div>
+              <button class="cerrar" id="cerrarinf">Cerrar</button>
+          </div>
+        </div>         
         <div class="modal" id="modal">
           <div class="modalCarrito">
                   <h3>Carrito</h3>
@@ -76,7 +84,7 @@
               <button class="finalizar" id="finalizar">Finalizar Compra</button>
               <button class="cerrar" id="cerrar">Cerrar</button>
           </div>
-      </div>          
+        </div>          
     </main>
     <footer>
       <section class="redes">

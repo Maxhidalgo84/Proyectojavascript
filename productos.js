@@ -32,8 +32,6 @@ class Producto {
         
         const datos = await response.json();
 
-        console.log(datos);
-
         datos.forEach(dato => {
             productos.push(new Producto(dato.id,dato.img,dato.nombre,dato.descripcion,dato.precio,dato.categoria));
             

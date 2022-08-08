@@ -10,7 +10,7 @@ const mostrarProductos = (productos) => {
   const infantil = document.getElementById("infantil");
 
   for (const {id,img,nombre,descripcion,precio,categoria} of productos) {
-    console.log(nombre);
+    
   
     let contenedor = document.createElement("div");
     contenedor.classList.add("col-lg-4");
@@ -25,8 +25,8 @@ const mostrarProductos = (productos) => {
                                     </div>
                                 </div>`;
     if (mountain) {
-       (categoria === "mountain") ? mountain.appendChild(contenedor): (categoria === "carrera") ? carrera.appendChild(contenedor)
-       : infantil.appendChild(contenedor);
+            (categoria === "mountain") ? mountain.appendChild(contenedor): (categoria === "carrera") ? carrera.appendChild(contenedor)
+            : infantil.appendChild(contenedor);
     
 
       //eleccion de bici al apretar comprar
@@ -55,7 +55,9 @@ export {mostrarProductos}
 // Pedido de usuario
 
 let padre = document.getElementById("demo3");
-let error1 = document.getElementById("error1");
+
+
+/*let error1 = document.getElementById("error1");
 let usuario;
 let correo;
 let usuarioSto = sessionStorage.getItem("usuario");
@@ -91,20 +93,77 @@ if (formulario) {
         e.correo.value = "";
       }
     });
+  }; */
+
+  let usuarioSto = sessionStorage.getItem("usuario");
+  let somos = document.getElementById("somos");
+  let auto = document.getElementById("auto")
+  let ingresar = document.getElementById("ingresar")
+  let usuario;
+  const validateEmail = (email) => {
+    return email.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
   };
 
-  //Valido si ya esta logueado
+ //Valido si ya esta logueado
+if(auto){
   if (usuarioSto) {
-    let usuario = usuarioSto;
-    let mensaje = `Bienvenido ${usuario}`;
-    Swal.fire(mensaje)
+    ingresar.className = "ingresar";
+    let nombre = usuarioSto;
+    let mensaje = `Hola ${nombre}`;
     let mostrarUser = document.createElement("div");
     mostrarUser.className = "demo2";
-    mostrarUser.innerText = `Bienvenido ${usuario}`;
-    padre.append(mostrarUser);
+    mostrarUser.innerText = `${mensaje}`;
+    if(somos){
+    Swal.fire(mensaje)
+    padre.append(mostrarUser);} 
+    else{
+    padre.append(mostrarUser)}
   } else {
-    loguear();
-  }
+      ingresar.addEventListener("click", () => {
+        Swal.fire({
+            title: 'Inicio Sesion',
+            html: `<input type="text" id="login" class="swal2-input" placeholder="Nombre">
+            <input type="email" id="correo" class="swal2-input" placeholder="correo">
+            <input type="password" id="password" class="swal2-input" placeholder="Password">`,
+            confirmButtonText: 'Enviar',
+            focusConfirm: false,
+            preConfirm: () => {
+              const login = Swal.getPopup().querySelector('#login').value
+              const password = Swal.getPopup().querySelector('#password').value
+              const correo = Swal.getPopup().querySelector('#correo').value
+              console.log(password);
+              console.log(correo);
+              if (!login || !password || !correo) {
+                Swal.showValidationMessage(`Ingrese todos los campos`)
+              }
+              else if (password.length < 6 || password.match([0-9999])) {
+                Swal.showValidationMessage(`Tu contraseña debe ser de mas 6 caracteres y un numero`)
+              }
+              else if (!validateEmail(correo))
+              {
+                Swal.showValidationMessage(`No has ingresado un correo valido`)
+              }
+              else {
+                usuario = document.getElementById("login");
+                sessionStorage.setItem("usuario", login);
+                let mostrarUser = document.createElement("div");
+                mostrarUser.className = "demo2";
+                mostrarUser.innerText = `Bienvenido ${login}`;
+                padre.append(mostrarUser);}
+                ingresar.className = "ingresar";
+            
+                return { login: login, correo: correo, password: password  }
+            } 
+          })
+          .then((result) => {
+            Swal.fire(`
+              Hola: ${result.value.login}
+            `.trim())
+        })
+    })
+  }    
 }
 
 
