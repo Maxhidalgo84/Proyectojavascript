@@ -6,7 +6,7 @@ const abrirCarrito = document.getElementById('open')
 
 const abrirCarrito2 = document.getElementById('open2')
 
-const abrirInfo = document.querySelector('open2')
+//const abrirInfo = document.querySelector('open2')
 
 const cerrarCarrito = document.getElementById('cerrar')
 
