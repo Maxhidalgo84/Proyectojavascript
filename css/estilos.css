@@ -127,11 +127,6 @@ h1, h2 {
     display: inline-block;
     margin: 10px; }
 
-.demo2 {
-  margin: auto 0px;
-  margin-right: 10px;
-  color: white; }
-
 .somos {
   padding: 10px;
   background-color: white;
@@ -258,7 +253,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
   background-color: transparent;
   width: 100%;
   height: 100vh;
@@ -266,6 +260,11 @@ footer {
   transition: opacity 0.3s ease;
   border-radius: 10px;
   z-index: 100; }
+
+.modal2Active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 5; }
 
 .modal {
   display: flex;
@@ -324,6 +323,16 @@ footer {
   padding: 5px 10px;
   display: flex;
   justify-content: space-between; }
+
+.productoEnInfo {
+  border-left: 5px solid lightblue;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  margin: 5px 0;
+  padding: 5px 10px;
+  justify-content: space-between; }
+  .productoEnInfo p {
+    text-align: initial; }
 
 .botonEliminar {
   background-color: white;
