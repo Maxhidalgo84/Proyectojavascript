@@ -3,13 +3,11 @@ import { productos } from "./productos.js";
 let productoStorage = JSON.parse(localStorage.getItem("productos"));
 const DateTime = luxon.DateTime;
 let precioTotal = document.getElementById("suma");
-
-
 let carrito = JSON.parse(localStorage.getItem("productos")) || [];
 
 //Renderizado del carrito de compras
 
-const renderCarrito = () => {
+export const renderCarrito = () => {
   productoStorage = JSON.parse(localStorage.getItem("productos"));
   const contenedorCarrito = document.getElementById("carritoContenedor");
   const contador = document.getElementById("contador");
@@ -19,29 +17,31 @@ const renderCarrito = () => {
   const envio = later.toLocaleString(DateTime.DATE_SHORT);
   contenedorCarrito.innerHTML = "";
 
-  if (productoStorage){
-  for (const item of productoStorage) {
-    let div = document.createElement("div");
-    div.classList.add("productoEnCarrito");
-    div.innerHTML = `   <p>${item.nombre}</p>
+  if (productoStorage) {// si existe algo en el localstorage lo muestro en el carrito
+    for (const item of productoStorage) {
+      let div = document.createElement("div");
+      div.classList.add("productoEnCarrito");
+      div.innerHTML = `   <p>${item.nombre}</p>
                         <p>Precio: ${item.precio}</p> 
                         <p id="cantidad${item.id}">Cantidad: ${item.cantidad}</p>
                         <button id="eliminar${item.id}" class="botonEliminar" ><i class="fa-solid fa-trash-can"></i></button>
             `;
-    contenedorCarrito.appendChild(div);
+      contenedorCarrito.appendChild(div);
 
-    //para elminar del carrito
-    const botonEliminar = document.getElementById(`eliminar${item.id}`);
-    botonEliminar.addEventListener("click", () => {
-      borrarItemCarrito(item.id);
-    });
-  }
+      //para elminar del carrito
+      const botonEliminar = document.getElementById(`eliminar${item.id}`);
+      botonEliminar.addEventListener("click", () => {
+        borrarItemCarrito(item.id);
+      });
+    }
     // boton de pago
     const botonMp = document.getElementById("finalizar");
     botonMp.addEventListener("click", (e) => pagar());
 
-      //Acumulador de precio y cantidad del carrito
-    //let precioTotal = document.getElementById("suma");
+    const vaciarBtn = document.getElementById("vaciar");
+    vaciarBtn.addEventListener("click", () => vaciar());
+
+    //Acumulador de precio y cantidad del carrito
     const total = carrito.reduce(
       (acumulador, elemento) =>
         acumulador + elemento.precio * elemento.cantidad,
@@ -56,59 +56,53 @@ const renderCarrito = () => {
     );
     contador.innerText = cantidad;
     contador2.innerText = cantidad;
-  }else {contenedorCarrito.innerText = "Carrito Vacio";
-         precioTotal.innerHTML = ""
-         contador.innerText = "0";
-         contador2.innerText = "0";
-    }
+  } else {//sino devuelvo vacio
+    contenedorCarrito.innerText = "Carrito Vacio";
+    precioTotal.innerHTML = ""
+    contador.innerText = "0";
+    contador2.innerText = "0";
+  }
 };
 
+//Agregar elemento al carrito
 export const carritoIndex = (productoId) => {
   let producto = productos.find((producto) => producto.id == productoId);
-  if (carrito.some((element) => element.id === productoId)) {
+  let carritoFind = carrito.find((element) => element.id === productoId);
+  //si existe le agrego 1
+  if (carritoFind) {
     carrito.find((item) => item.id === productoId).cantidad++;
-  } else {
-    carrito.push(producto);
+  } else {//sino lo agrego al carrito
+    let linea = { ...producto };
+    carrito.push(linea);
     carrito.find((item) => item.id === productoId).cantidad++;
   }
+  //renderizo
   localStorage.setItem("productos", JSON.stringify(carrito));
   renderCarrito();
 };
 
+//borrar item carrito
 export const borrarItemCarrito = (productoId) => {
-  alert(productoId)
-  //let borrado = productos.find((item) => item.id == productoId);
-  if (
-    carrito.some((element) => element.id === productoId) &&
-    carrito.some((element) => element.cantidad > 1)
-  ) {
-    carrito.find((item) => item.id === productoId).cantidad--;
-  } else {
-    //carrito.find((item) => item.id === productoId).cantidad--;
-    carrito.splice(carrito.indexOf(carrito.some((element) => element.id === productoId)),1);
+  let linea = carrito.find((element) => element.id === productoId);
+  // si existe y es mayor a 1 
+  if (linea) {
+    if (linea.cantidad > 1) {
+      carrito.find((item) => item.id === productoId).cantidad--;
+    } else {//sino lo borro
+      carrito.splice(carrito.indexOf(linea), 1);
+    }
   }
-
   // volvemos a renderizar
   localStorage.setItem("productos", JSON.stringify(carrito));
   renderCarrito();
 };
 
-
 //vaciar carrito
-  const vaciarBtn = document.getElementById("vaciar");
-  vaciarBtn.addEventListener("click", () => {
-    localStorage.clear();
-    carrito = [];
-    renderCarrito();
-  })
-
-// Si hay algo en storage lo renderizo
-if (precioTotal) {
-  if (productoStorage) {
-    renderCarrito();
-  }
+const vaciar = () => {
+  localStorage.clear();
+  carrito = [];
+  renderCarrito();
 }
-
 
 //Pagar del api de mercadopagos
 const pagar = async () => {

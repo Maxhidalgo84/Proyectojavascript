@@ -1,4 +1,5 @@
-import { mostrarProductos } from "./app.js";
+import { renderCarrito } from "./carritoIndex.js";
+import { mostrarProductos } from "./mostrarProductos.js";
 
 const productos = [];
 
@@ -10,7 +11,8 @@ class Producto {
     descripcion,
     precio,
     categoria,
-    especificaciones
+    especificaciones,
+    cantidad
   ) {
     this.id = id;
     this.img = img;
@@ -23,7 +25,7 @@ class Producto {
   }
 }
 //traigo los productos del json
-const cargarProductos = async () => {
+export const cargarProductos = async () => {
   try {
     const response = await fetch("../data.json");
 
@@ -38,7 +40,8 @@ const cargarProductos = async () => {
           dato.descripcion,
           dato.precio,
           dato.categoria,
-          dato.especificaciones
+          dato.especificaciones,
+          dato.cantidad
         )
       );
     });
@@ -50,6 +53,8 @@ const cargarProductos = async () => {
 const global = async () => {
   await cargarProductos();
   mostrarProductos(productos);
+  renderCarrito()
+
 };
 
 global();
