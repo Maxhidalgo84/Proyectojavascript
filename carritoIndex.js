@@ -2,14 +2,15 @@ import { productos } from "./productos.js";
 
 let productoStorage = JSON.parse(localStorage.getItem("productos"));
 const DateTime = luxon.DateTime;
-let suma = document.getElementById("suma");
+let precioTotal = document.getElementById("suma");
+
 
 let carrito = JSON.parse(localStorage.getItem("productos")) || [];
 
 //Renderizado del carrito de compras
 
 const renderCarrito = () => {
-  let productoStorage = JSON.parse(localStorage.getItem("productos"));
+  productoStorage = JSON.parse(localStorage.getItem("productos"));
   const contenedorCarrito = document.getElementById("carritoContenedor");
   const contador = document.getElementById("contador");
   const contador2 = document.getElementById("contador2");
@@ -18,6 +19,7 @@ const renderCarrito = () => {
   const envio = later.toLocaleString(DateTime.DATE_SHORT);
   contenedorCarrito.innerHTML = "";
 
+  if (productoStorage){
   for (const item of productoStorage) {
     let div = document.createElement("div");
     div.classList.add("productoEnCarrito");
@@ -33,14 +35,14 @@ const renderCarrito = () => {
     botonEliminar.addEventListener("click", () => {
       borrarItemCarrito(item.id);
     });
-
+  }
     // boton de pago
     const botonMp = document.getElementById("finalizar");
     botonMp.addEventListener("click", (e) => pagar());
 
-    //Acumulador de precio y cantidad del carrito
-    let precioTotal = document.getElementById("suma");
-    let total = carrito.reduce(
+      //Acumulador de precio y cantidad del carrito
+    //let precioTotal = document.getElementById("suma");
+    const total = carrito.reduce(
       (acumulador, elemento) =>
         acumulador + elemento.precio * elemento.cantidad,
       0
@@ -48,13 +50,17 @@ const renderCarrito = () => {
     precioTotal.innerHTML = `<p>Total: $${total}</p>
                               <p>La fecha estimada de envio es ${envio}</p>`;
 
-    let cantidad = carrito.reduce(
+    const cantidad = carrito.reduce(
       (acumulador, elemento) => acumulador + elemento.cantidad,
       0
     );
     contador.innerText = cantidad;
     contador2.innerText = cantidad;
-  }
+  }else {contenedorCarrito.innerText = "Carrito Vacio";
+         precioTotal.innerHTML = ""
+         contador.innerText = "0";
+         contador2.innerText = "0";
+    }
 };
 
 export const carritoIndex = (productoId) => {
@@ -69,29 +75,40 @@ export const carritoIndex = (productoId) => {
   renderCarrito();
 };
 
-// Si hay algo en storage lo renderizo
-if (suma) {
-  if (productoStorage) {
-    renderCarrito();
-  }
-}
-
 export const borrarItemCarrito = (productoId) => {
-  let borrado = productos.find((item) => item.id == productoId);
+  alert(productoId)
+  //let borrado = productos.find((item) => item.id == productoId);
   if (
     carrito.some((element) => element.id === productoId) &&
-    carrito.some((element) => element.cantidad > 0)
+    carrito.some((element) => element.cantidad > 1)
   ) {
     carrito.find((item) => item.id === productoId).cantidad--;
   } else {
-    carrito.find((item) => item.id === productoId).cantidad--;
-    carrito.splice(borrado);
+    //carrito.find((item) => item.id === productoId).cantidad--;
+    carrito.splice(carrito.indexOf(carrito.some((element) => element.id === productoId)),1);
   }
 
   // volvemos a renderizar
   localStorage.setItem("productos", JSON.stringify(carrito));
   renderCarrito();
 };
+
+
+//vaciar carrito
+  const vaciarBtn = document.getElementById("vaciar");
+  vaciarBtn.addEventListener("click", () => {
+    localStorage.clear();
+    carrito = [];
+    renderCarrito();
+  })
+
+// Si hay algo en storage lo renderizo
+if (precioTotal) {
+  if (productoStorage) {
+    renderCarrito();
+  }
+}
+
 
 //Pagar del api de mercadopagos
 const pagar = async () => {
