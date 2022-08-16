@@ -8,8 +8,8 @@ const mostrarProductos = (productos) => {
   const mountain = document.getElementById("MB");
   const carrera = document.getElementById("carrera");
   const infantil = document.getElementById("infantil");
-  
-  for (const { id, img, nombre, descripcion, precio, categoria } of productos) { 
+
+  for (const { id, img, nombre, descripcion, precio, categoria } of productos) {
     let contenedor = document.createElement("div");
     contenedor.classList.add("col-lg-4");
 
@@ -21,19 +21,19 @@ const mostrarProductos = (productos) => {
                                     <h5 class="card-title"> $${precio}</h5>
                                     <a href="#" id="${id}"  class="btn btn-primary">Comprar</a>
                                     <a href="#" id="inf${id}"  class="btn btn-primary">Info</a>
-                              </div>`;
+                                    </div>`;
+    //separo por categoria
     if (mountain) {
       categoria === "mountain"
         ? mountain.appendChild(contenedor)
         : categoria === "carrera"
         ? carrera.appendChild(contenedor)
         : infantil.appendChild(contenedor);
-      
-      const showInfo = document.getElementById(`inf${id}`)
+
+      const showInfo = document.getElementById(`inf${id}`);
       showInfo.addEventListener("click", () => {
-        
         infoIndex(id);
-      })
+      });
 
       //eleccion de bici al apretar comprar
       const bicicleta = document.getElementById(`${id}`);
@@ -54,55 +54,11 @@ const mostrarProductos = (productos) => {
   }
 };
 
-
-//mostrarProductos(productos);
-
 export { mostrarProductos };
-
-
 
 // Pedido de usuario
 
 let padre = document.getElementById("demo3");
-
-/*let error1 = document.getElementById("error1");
-let usuario;
-let correo;
-let usuarioSto = sessionStorage.getItem("usuario");
-let formulario = document.getElementById("formulario");
-let boton01 = document.getElementById("envia");
-
-// si no esta logueado se tiene que loguear con esta funcion.
-if (formulario) {
-  const loguear = () => {
-    formulario.addEventListener("submit", (e) => {
-      e.preventDefault();
-      padre.innerText = "";
-      error1.innerText = "";
-      if (
-        e.target.correo.value.includes("@") &&
-        e.target.correo.value.includes(".")
-      ) {
-        usuario = document.getElementById("name");
-        sessionStorage.setItem("usuario", usuario.value);
-        let mostrarUser = document.createElement("div");
-        mostrarUser.className = "demo2";
-        mostrarUser.innerText = `Bienvenido ${usuario.value}`;
-        padre.append(mostrarUser);
-      } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Parece que no has ingresado un correo valido!',
-        })
-        let mostrarUser = document.createElement("div");
-        mostrarUser.innerHTML = "no es un correo";
-        error1.appendChild(mostrarUser);
-        e.correo.value = "";
-      }
-    });
-  }; */
-
 let usuarioSto = sessionStorage.getItem("usuario");
 let somos = document.getElementById("somos");
 let auto = document.getElementById("auto");
@@ -130,6 +86,7 @@ if (auto) {
       padre.append(mostrarUser);
     }
   } else {
+    //Utilizo un Swal.Fire para inicio de sesion.
     ingresar.addEventListener("click", () => {
       Swal.fire({
         title: "Inicio Sesion",

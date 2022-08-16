@@ -7,22 +7,20 @@
     "precio": 100000,
     "categoria": "mountain",
     "especificaciones": {
-      
-    "cuadro":  "aluminio",
+      "cuadro": "aluminio",
 
-    "horquilla": "RST GILA con bloqueo manual",
-    
-    "frenos": "disco hidráulicos",
-    
-    "cadena": "Shimano HG54   116L   Transmisión 2×9",
-    
-    "cambio": "Shimano Deore",
-    
-    "cubiertas": "MAXXIS PACE 29×2.10",
-    
-    "asiento": "marca Venzo TX"}
-    
+      "horquilla": "RST GILA con bloqueo manual",
 
+      "frenos": "disco hidráulicos",
+
+      "cadena": "Shimano HG54   116L   Transmisión 2×9",
+
+      "cambio": "Shimano Deore",
+
+      "cubiertas": "MAXXIS PACE 29×2.10",
+
+      "asiento": "marca Venzo TX"
+    }
   },
 
   {
@@ -33,20 +31,20 @@
     "precio": 80000,
     "categoria": "mountain",
     "especificaciones": {
-      
-    "cuadro":  "aluminio",
+      "cuadro": "aluminio",
 
-    "horquilla": "RST GILA con bloqueo manual",
-    
-    "frenos": "disco hidráulicos",
-    
-    "cadena": "Shimano h350   116L   Transmisión 2×9",
-    
-    "cambio": "Shimano Alivio",
-    
-    "cubierta": "MAXXIS PACE 29×2",
-    
-    "asiento": "marca Venzo TRX"}
+      "horquilla": "RST GILA con bloqueo manual",
+
+      "frenos": "disco hidráulicos",
+
+      "cadena": "Shimano h350   116L   Transmisión 2×9",
+
+      "cambio": "Shimano Alivio",
+
+      "cubierta": "MAXXIS PACE 29×2",
+
+      "asiento": "marca Venzo TRX"
+    }
   },
 
   {
@@ -57,20 +55,20 @@
     "precio": 50000,
     "categoria": "mountain",
     "especificaciones": {
-      
-      "cuadro":  "aluminio",
-  
+      "cuadro": "aluminio",
+
       "horquilla": "RST GILA con bloqueo manual",
-      
+
       "frenos": "disco mecanicos",
-      
+
       "cadena": "Shimano 500   116L   Transmisión 2×9",
-      
+
       "cambio": "Shimano Tourney",
-      
+
       "cubiertas": "MAXXIS PACE 27.5×2",
-      
-      "asiento": "marca Venzo TRX"}
+
+      "asiento": "marca Venzo TRX"
+    }
   },
 
   {
@@ -80,22 +78,21 @@
     "descripcion": "La mejor relacion precio",
     "precio": 40000,
     "categoria": "mountain",
-    "especificaciones": 
-    {
-      
-      "cuadro":  "aluminio",
-  
+    "especificaciones": {
+      "cuadro": "aluminio",
+
       "horquilla": "RST x con bloqueo manual",
-      
+
       "frenos": "disco mecanicos",
-      
+
       "cadena": "Shimano 200  116L   Transmisión 2×9",
-      
+
       "cambio": "Shimano Tourney",
-      
+
       "cubiertas": "MAXXIS PACE 27.5×2",
-      
-      "asiento": "marca Venzo TRX"}
+
+      "asiento": "marca Venzo TRX"
+    }
   },
 
   {
@@ -105,23 +102,21 @@
     "descripcion": "La mejor bici de carrera",
     "precio": 100000,
     "categoria": "carrera",
-    "especificaciones": 
-    {
-      
-      "cuadro":  "HIDROFORMADO Rodado 28 CON FRENTE CONICO",
-  
+    "especificaciones": {
+      "cuadro": "HIDROFORMADO Rodado 28 CON FRENTE CONICO",
+
       "horquilla": "RST x con bloqueo manual",
-      
+
       "frenos": "disco hidráulicos",
-      
+
       "cadena": "HG-53 P/KIT 114L  18 V",
-      
+
       "cambio": " SENSAH IGNITE R90 2 x 9 A ",
-      
+
       "cubiertas": "RUTA C/MAXXIS DETONATOR 700 C/ALAM",
-      
-      "asiento": "marca Venzo TRX"}
-  
+
+      "asiento": "marca Venzo TRX"
+    }
   },
 
   {
@@ -131,22 +126,21 @@
     "descripcion": "Ideal trayectos largos",
     "precio": 90000,
     "categoria": "carrera",
-    "especificaciones": 
-    {
-      
-      "cuadro":  "HIDROFORMADO Rodado 28 CON FRENTE CONICO",
-  
+    "especificaciones": {
+      "cuadro": "HIDROFORMADO Rodado 28 CON FRENTE CONICO",
+
       "horquilla": "RST x con bloqueo manual",
-      
+
       "frenos": "disco mecanicos",
-      
+
       "cadena": "HG-53 P/KIT 114L  15 V",
-      
+
       "cambio": " SENSAH IGNITE R90 2 x 9 A ",
-      
+
       "cubiertas": "RUTA C/MAXXIS DETONATOR 600 C/ALAM",
-      
-      "asiento": "marca Venzo TRX"}
+
+      "asiento": "marca Venzo TRX"
+    }
   },
 
   {
@@ -156,22 +150,21 @@
     "descripcion": "Mejor en su precio",
     "precio": 70000,
     "categoria": "carrera",
-    "especificaciones": 
-    {
-      
-      "cuadro":  "HIDROFORMADO Rodado 28 CON FRENTE CONICO",
-  
+    "especificaciones": {
+      "cuadro": "HIDROFORMADO Rodado 28 CON FRENTE CONICO",
+
       "horquilla": "RST x con bloqueo manual",
-      
+
       "frenos": "disco mecanicos",
-      
+
       "cadena": "HG-53 P/KIT 114L  15 V",
-      
+
       "cambio": " SENSAH IGNITE R90 2 x 9 A ",
-      
+
       "cubiertas": "RUTA C/MAXXIS DETONATOR 600 C/ALAM",
-      
-      "asiento": "marca Venzo TRX"}
+
+      "asiento": "marca Venzo TRX"
+    }
   },
 
   {
@@ -181,23 +174,21 @@
     "descripcion": "Bici niño 1",
     "precio": 30000,
     "categoria": "infantil",
-    "especificaciones": 
-    {
-      
-      "cuadro":  "aluminio",
-  
+    "especificaciones": {
+      "cuadro": "aluminio",
+
       "horquilla": "generica",
-      
+
       "frenos": "shimano",
-      
+
       "cadena": "generica",
-      
+
       "cambio": "shimano",
-      
+
       "cubiertas": "15 pulgadas",
-      
-      "asiento": "generico"}
-  
+
+      "asiento": "generico"
+    }
   },
 
   {
@@ -207,22 +198,21 @@
     "descripcion": "Bici niño 2",
     "precio": 20000,
     "categoria": "infantil",
-    "especificaciones": 
-    {
-      
-      "cuadro":  "aluminio",
-  
+    "especificaciones": {
+      "cuadro": "aluminio",
+
       "horquilla": "generica",
-      
+
       "frenos": "shimano",
-      
+
       "cadena": "generica",
-      
+
       "cambio": "shimano",
-      
+
       "cubiertas": "15 pulgadas",
-      
-      "asiento": "generico"}
+
+      "asiento": "generico"
+    }
   },
 
   {
@@ -232,22 +222,20 @@
     "descripcion": "Bici niño 3",
     "precio": 15000,
     "categoria": "infantil",
-    "especificaciones": 
-    {
-      
-      "cuadro":  "Acero",
-  
+    "especificaciones": {
+      "cuadro": "Acero",
+
       "horquilla": "generica",
-      
+
       "frenos": "generico",
-      
+
       "cadena": "generica",
-      
+
       "cambio": "shimano",
-      
+
       "cubiertas": "10 pulgadas",
-      
-      "asiento": "generico"}
-  
+
+      "asiento": "generico"
+    }
   }
 ]
