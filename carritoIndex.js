@@ -4,6 +4,8 @@ let productoStorage = JSON.parse(localStorage.getItem("productos"));
 const DateTime = luxon.DateTime;
 let precioTotal = document.getElementById("suma");
 let carrito = JSON.parse(localStorage.getItem("productos")) || [];
+let botonMp = document.getElementById("finalizar");
+let vaciarBtn = document.getElementById("vaciar");
 
 //Renderizado del carrito de compras
 
@@ -17,7 +19,10 @@ export const renderCarrito = () => {
   const envio = later.toLocaleString(DateTime.DATE_SHORT);
   contenedorCarrito.innerHTML = "";
 
+
   if (productoStorage) {// si existe algo en el localstorage lo muestro en el carrito
+    botonMp.className = "finalizar"
+    vaciarBtn.className = "btn btn-danger"
     for (const item of productoStorage) {
       let div = document.createElement("div");
       div.classList.add("productoEnCarrito");
@@ -35,30 +40,40 @@ export const renderCarrito = () => {
       });
     }
     // boton de pago
-    const botonMp = document.getElementById("finalizar");
     botonMp.addEventListener("click", (e) => pagar());
 
-    const vaciarBtn = document.getElementById("vaciar");
+    //vaciar carrito
     vaciarBtn.addEventListener("click", () => vaciar());
 
     //Acumulador de precio y cantidad del carrito
-    const total = carrito.reduce(
-      (acumulador, elemento) =>
-        acumulador + elemento.precio * elemento.cantidad,
-      0
-    );
-    precioTotal.innerHTML = `<p>Total: $${total}</p>
-                              <p>La fecha estimada de envio es ${envio}</p>`;
-
     const cantidad = carrito.reduce(
       (acumulador, elemento) => acumulador + elemento.cantidad,
       0
     );
     contador.innerText = cantidad;
     contador2.innerText = cantidad;
+
+    const total = carrito.reduce(
+      (acumulador, elemento) =>
+        acumulador + elemento.precio * elemento.cantidad,
+      0
+    );
+    if (total != 0) {
+      precioTotal.innerHTML = `<p>Total: $${total}</p>
+                              <p>La fecha estimada de envio es ${envio}</p>`;
+    }
+    else {
+      contenedorCarrito.innerText = "Carrito Vacio";
+      precioTotal.innerText = "";
+      botonMp.className = "ocultar"
+      vaciarBtn.className = "ocultar"
+    }
+
   } else {//sino devuelvo vacio
     contenedorCarrito.innerText = "Carrito Vacio";
-    precioTotal.innerHTML = ""
+    botonMp.className = "ocultar"
+    vaciarBtn.className = "ocultar"
+    precioTotal.innerText = "";
     contador.innerText = "0";
     contador2.innerText = "0";
   }

@@ -34,10 +34,12 @@
     transition: opacity 0.3s ease;
     border-radius: 10px ;
     z-index: 100;
+    
   } 
   
   /* hacer visible el modal  */
   .modalActive {
+    position: fixed;
     opacity: 1;
     visibility: visible;
     z-index: 5;
@@ -66,8 +68,9 @@
   .cerrar {
     background-color: black;
     color: white;
-    padding: 5px;
+    padding: 5px 20px;
     border-radius: 5px;
+    
   }
 
   .finalizar {
@@ -75,6 +78,7 @@
     color: white;
     padding: 5px;
     border-radius: 5px;
+
   }
   
   .productoEnCarrito {
@@ -111,3 +115,11 @@
   .suma {
     text-align: center;
   }
+
+  .botonesCarrito {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  

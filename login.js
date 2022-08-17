@@ -5,6 +5,8 @@ let usuarioSto = sessionStorage.getItem("usuario");
 let somos = document.getElementById("somos");
 let auto = document.getElementById("auto");
 let ingresar = document.getElementById("ingresar");
+let salir = document.getElementById("salir");
+let mostrarUser = document.createElement("div");
 let usuario;
 const validateEmail = (email) => {
     return email.match(
@@ -15,12 +17,11 @@ const validateEmail = (email) => {
 //Valido si ya esta logueado
 const login = () => {
     if (usuarioSto) {
-        ingresar.className = "ingresar";
+        ingresar.className = "ocultar";
+        salir.className = "btn btn-danger";
         let nombre = usuarioSto;
-        let mensaje = `Hola ${nombre}`;
-        let mostrarUser = document.createElement("div");
-        mostrarUser.className = "demo2";
-        mostrarUser.innerText = `${mensaje}`;
+        let mensaje = `${nombre}`;
+        mostrarUser.innerHTML = `${mensaje}`;
         if (somos) {
             Swal.fire(mensaje);
             padre.append(mostrarUser);
@@ -41,8 +42,6 @@ const login = () => {
                     const login = Swal.getPopup().querySelector("#login").value;
                     const password = Swal.getPopup().querySelector("#password").value;
                     const correo = Swal.getPopup().querySelector("#correo").value;
-                    console.log(password);
-                    console.log(correo);
                     if (!login || !password || !correo) {
                         Swal.showValidationMessage(`Ingrese todos los campos`);
                     } else if (password.length < 6 || password.match([0 - 9999])) {
@@ -52,14 +51,13 @@ const login = () => {
                     } else if (!validateEmail(correo)) {
                         Swal.showValidationMessage(`No has ingresado un correo valido`);
                     } else {
+                        salir.className = "btn btn-danger";
                         usuario = document.getElementById("login");
                         sessionStorage.setItem("usuario", login);
-                        let mostrarUser = document.createElement("div");
-                        mostrarUser.className = "demo2";
-                        mostrarUser.innerText = `Bienvenido ${login}`;
+                        mostrarUser.innerHTML = `Bienvenido ${login}`
                         padre.append(mostrarUser);
                     }
-                    ingresar.className = "ingresar";
+                    ingresar.className = "ocultar";
 
                     return { login: login, correo: correo, password: password };
                 },
@@ -72,6 +70,16 @@ const login = () => {
             });
         });
     }
+    salir.addEventListener("click", () => logout())
 };
+
+const logout = () => {
+    sessionStorage.clear();
+    ingresar.className = "btn btn-primary"
+    salir.className = "ocultar"
+    mostrarUser.innerText = "Sesion cerrada"
+    padre.append(mostrarUser);
+
+}
 
 login();

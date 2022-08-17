@@ -12,7 +12,7 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
         <div class="container-fluid">
-          <a class="navbar-brand" id="auto" href="#"><img class="logo" src="../img/logbici.png"></a>
+          <a class="navbar-brand" id="auto" href="../index.html"><img class="logo" src="../img/logobici1.png">BikeMax</a>
           <button class="nav-link text-body  carrito" id="open" href="#">Carrito <i class="fa-solid fa-cart-shopping"></i> <span id="contador2">0</span> </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,6 +28,7 @@
             </ul>
             <p id="demo3" class="demo2"></p>
             <button id="ingresar" class="btn btn-primary">Ingresar</button>
+            <button id="salir" class="btn btn-danger ocultar">Salir</button>`;
             <button class="nav-link text-body  carrito2" id="open2" href="#">Carrito<i class="fa-solid fa-cart-shopping"></i> <span id="contador">0</span> </a>
           </div>
         </div>
@@ -83,9 +84,11 @@
                   <h3>Carrito</h3>
               <div id="carritoContenedor"></div>
               <div class="suma" id="suma"></div>
-              <button class="finalizar" id="finalizar">Finalizar Compra</button>
+              <div class="botonesCarrito">
+              <button  id="finalizar">Finalizar Compra</button>
+              <button  id="vaciar">Vaciar</button>
               <button class="cerrar" id="cerrar">Cerrar</button>
-              <button class="btn btn-danger" id="vaciar">Vaciar</button>
+              </div>
           </div>
         </div>          
     </main>
@@ -120,5 +123,6 @@
     <script src="../infoIndex.js" type="module"></script>
     <script src="../carritoIndex.js" type="module"></script>
     <script src="../modal.js" type="module"></script>
+    <script src="/login.js" type="module"></script>
 </body>
 </html>
