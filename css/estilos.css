@@ -94,19 +94,16 @@ h1, h2 {
 
 .modelos {
   text-align: center;
-  display: flex;
-  justify-content: space-around;
   max-width: 800px;
   margin: auto; }
-  .modelos a {
-    width: 250px;
-    max-width: 250px;
-    text-decoration: none;
-    color: white;
-    margin: 10px 0px; }
-  @media (max-width: 576px) {
-    .modelos {
-      display: block; } }
+  .modelos li {
+    display: inline-block; }
+    .modelos li a {
+      width: 250px;
+      max-width: 250px;
+      text-decoration: none;
+      color: white;
+      margin: 10px 0px; }
 
 .bicis {
   margin: 5px; }
