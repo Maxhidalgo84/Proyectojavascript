@@ -57,6 +57,7 @@
 }
 
 .modelos {
+    text-align: center;
     display: flex;
     justify-content:space-around;
     max-width: 800px;
@@ -67,6 +68,11 @@
     max-width: 250px;
     text-decoration: none;
     color: white;
+    margin: 10px 0px;
+    
+    }
 
+    @media (max-width:576px){ 
+        display: block;
     }
 }
