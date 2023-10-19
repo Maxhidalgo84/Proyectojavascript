@@ -69,10 +69,7 @@ h1, h2 {
         
         
     } */ }
-  .portada .portadaTitulo {
-    position: absolute;
-    left: 0;
-    right: 0; }
+
     .portada .portadaTitulo img {
       max-width: 150px;
       left: 0;
@@ -95,7 +92,8 @@ h1, h2 {
 .modelos {
   text-align: center;
   max-width: 800px;
-  margin: auto; }
+  margin: auto;
+  padding: 0; }
   .modelos li {
     display: inline-block; }
     .modelos li a {
